@@ -5,11 +5,11 @@
     width: 600px;
     background-color: antiquewhite;
     border: 2px black solid;
-};
+}
 
 .rectcont {
     display: inline-block;
-};
+}
 
 .rectangle {
     background-color: green;

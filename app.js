@@ -2,36 +2,36 @@
 
 class Shape {
     constructor (height, width, x, y) {
-        this.div = document.createElement('div')
-        this.div.height = height;
-        this.div.width = width;
+        this.div = document.createElement('div');
+        this.div.style.height = `${height}px`;
+        this.div.style.width = `${width}px`;
         this.div.style.left = `${x}px`;
         this.div.style.top = `${y}px`;
-        this.div.x = randVal();
-        this.div.y = randVal();
     }
 }
 
 class Rectangle extends Shape {
-    constructor(height, width) {
+    constructor(height, width, x, y) {
         super(height, width, x, y);
-        this.div.classList.add('rectangle')
+        this.div.classList.add('rectangle');
         this.height = document.getElementById(rectheight);
         this.width = document.getElementById(rectwidth);
         
     }
 }
 // to create the random placement. 
-//needs to constrain to the 600x600 'canvas' I made. do I just append to the canvas?
-function randVal(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min
+//needs to constrain to the 600x600 'canvas' I made. do I just append to the canvas? or make the max 600px?
+function randVal() {
+    return Math.floor(Math.random() * (600 - 1)) + 1
 };
 
 //playing with event listner here
-document.getElementById(rectangleform).addEventListener("submit", function() {
-    let newRect = new Rectangle;
-    canvas.appendChild(newRect);
+
+document.getElementById('rectangleform').addEventListener("submit", function(e) {
+    e.preventDefault();
+    let rectHeight = document.getElementById('rectheight').value;
+    let rectWidth = document.getElementById('rectwidth').value;
+    let newRect = new Rectangle(rectHeight, rectWidth, randVal(), randVal());
+    let canvas = document.querySelector('.canvas');
+    canvas.appendChild(newRect.div);
 });
-
-
-
