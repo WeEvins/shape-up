@@ -6,41 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Shape Up</title>
 </head>
 
 <body>
     <div class="shapecontainer">
-        <form action="" class="rectangle">
-            height: <input type="height" name="height"><br>
-            width: <input type="width" name="width"><br>
-            <input type="submit" value="submit">
-        </form>
-        <form action="" class="square">
-                height: <input type="height" name="height"><br>
-                width: <input type="width" name="width"><br>
+        <div class="rectcont">
+            <h4>Let's make a new rectangle!</h4>
+            <form action="" class="rectangleform" id="rectangleform">
+               <p>height:</p>
+                <input type="height" name="height" id="rectheight">
+                <br> 
+                <p>width:</p>
+                <input type="width" name="width" id="rectwidth">
+                <br>
                 <input type="submit" value="submit">
-        </form>
-        <form action="" class="circle">
-                height: <input type="height" name="height"><br>
-                width: <input type="width" name="width"><br>
-                <input type="submit" value="submit">
-        </form>
-        <form action="" class="isotriangle">
-                height: <input type="height" name="height"><br>
-                width: <input type="width" name="width"><br>
-                <input type="submit" value="submit">
-        </form>
-    </div>
+            </form>
+        </div>
+        
+    <div class="canvas"></div>
 
-    <div class="canvas">
-
-    </div>
-    
-    <div class="shapes-info">
-
-    </div>
-
+    <div class="shapes-info"></div>
 
     <script src="app.js"></script>
 </body>

@@ -1,4 +1,32 @@
+/* https://css-tricks.com/examples/ShapesOfCSS/ */
+
 .canvas {
     height: 600px;
     width: 600px;
+    background-color: antiquewhite;
+    border: 2px black solid;
+};
+
+.rectcont {
+    display: inline-block;
+};
+
+.rectangle {
+    background-color: green;
 }
+
+/* #triangle-bottomleft {
+	width: 0;
+	height: 0;
+	border-bottom: 100px solid yellow;
+	border-right: 100px solid transparent;
+};
+
+#circle {
+	width: 100px;
+	height: 100px; 
+	background: purple;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}; */
