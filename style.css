@@ -4,7 +4,23 @@
     height: 600px;
     width: 600px;
     background-color: antiquewhite;
-    border: 2px black solid;
+	border: 2px black solid;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.shapes-info {
+	height: 100px;
+	width: 70px;
+	border: 1px black dotted;
+	display: inline-block;
+	margin: 0 30px;
+	vertical-align: top;
+}
+
+.shape { 
+	cursor: pointer;
+	position: absolute;
 }
 
 .rectcont {
@@ -17,22 +33,19 @@
 }
 
 .square {
-	
-	background-color: purple;
+	background-color: red;
 }
 
-/* #triangle-bottomleft {
-	width: 0;
-	height: 0;
-	border-bottom: 100px solid yellow;
-	border-right: 100px solid transparent;
+
+
+.triangle {
+	border-width: 0;
+	border-color: transparent;
+	border-bottom-color: yellow;
+	border-style: solid;
 };
 
-#circle {
-	width: 100px;
-	height: 100px; 
+.circle {
 	background: purple;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}; */
+	border-radius: 50%;
+};
