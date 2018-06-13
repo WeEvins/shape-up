@@ -1,7 +1,7 @@
 //https://css-tricks.com/examples/ShapesOfCSS/
 
 class Shape {
-    constructor (height, width, x, y) {
+    constructor(height, width, x, y) {
         this.div = document.createElement('div');
         this.div.style.height = `${height}px`;
         this.div.style.width = `${width}px`;
@@ -14,20 +14,38 @@ class Rectangle extends Shape {
     constructor(height, width, x, y) {
         super(height, width, x, y);
         this.div.classList.add('rectangle');
-        this.height = document.getElementById(rectheight);
-        this.width = document.getElementById(rectwidth);
-        
+
     }
 }
+
+class Square extends Rectangle {
+    constructor(height, width, x, y) {
+        super(height, width, x, y);
+        this.div.classList.add('square');
+    }
+}
+
+
+document.getElementById('sqrform').addEventListener("submit", function (e) {
+    e.preventDefault();
+    let sqrHeight = document.getElementById('sqrsize').value;
+    let sqrWidth = document.getElementById('sqrsize').value;
+    let newSqr = new Square(sqrHeight, sqrWidth, randVal(), randVal());
+    let canvas = document.querySelector('.canvas');
+    canvas.appendChild(newSqr.div);
+});
+
+
+
+
 // to create the random placement. 
-//needs to constrain to the 600x600 'canvas' I made. do I just append to the canvas? or make the max 600px?
 function randVal() {
-    return Math.floor(Math.random() * (600 - 1)) + 1
-};
+        return Math.floor(Math.random() * (600 - 1)) + 1
+    };
 
 //playing with event listner here
 
-document.getElementById('rectangleform').addEventListener("submit", function(e) {
+document.getElementById('rectangleform').addEventListener("submit", function (e) {
     e.preventDefault();
     let rectHeight = document.getElementById('rectheight').value;
     let rectWidth = document.getElementById('rectwidth').value;
