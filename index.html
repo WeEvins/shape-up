@@ -32,10 +32,34 @@
                 <input type="submit" value="submit">
             </form>
         </div>
-
+        <div class="circont">
+            <h4>Let's make a new square!</h4>
+            <form action="" class="cirform" id="cirform">
+               <p>Circumference:</p>
+                <input type="height" name="circumference" id="sqrsize">
+                <br> 
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <div class="tricont">
+            <h4>Let's make a new square!</h4>
+            <form action="" class="triform" id="triform">
+               <p>Base:</p>
+                <input type="height" name="base" id="trisize">
+                <br> 
+                <input type="submit" value="submit">
+            </form>
+        </div>
     <div class="canvas"></div>
 
-    <div class="shapes-info"></div>
+    <div class="shapes-info">
+        <p>Shape Name:<span id="shape-display"></span></p>
+        <p>Width: <span id="width-display"></span></p>
+        <p>Height: <span id="height-display"></span></p>
+        <p>Radius: <span id="radius-display"></span></p>
+        <p>Area: <span id="area-display"></span></p>
+        <p>Perimiter <span id="peri-display"></span></p>
+    </div>
 
     <script src="app.js"></script>
 </body>

@@ -12,7 +12,13 @@
 }
 
 .rectangle {
-    background-color: green;
+	background-color: green;
+	
+}
+
+.square {
+	
+	background-color: purple;
 }
 
 /* #triangle-bottomleft {

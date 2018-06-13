@@ -25,7 +25,49 @@ class Square extends Rectangle {
     }
 }
 
+class Circle extends Shape {
+    constructor(radius) {
+        super(2 * radius, 2 * radius)
+        this.radius = radius;
+    }
 
+    area () {
+        return Math.PI * this.radius * this.radius;
+    }
+
+    circum() {
+        return 2 * Math.PI * this.radius;
+    }
+}
+
+class Triangle extends Shape {
+    constructor(height){
+        super(height, height);
+    }
+    area() {
+        return 0.5 * this.height * this.height;
+    }
+    perimeter(){
+        return 2 * this.height + Math.sqrt(2) * this.height;
+    }
+
+}
+
+
+// to create the random placement. 
+function randVal() {
+    return Math.floor(Math.random() * (600 - 1)) + 1
+};
+
+//playing with event listner here
+document.getElementById('rectangleform').addEventListener("submit", function (e) {
+    e.preventDefault();
+    let rectHeight = document.getElementById('rectheight').value;
+    let rectWidth = document.getElementById('rectwidth').value;
+    let newRect = new Rectangle(rectHeight, rectWidth, randVal(), randVal());
+    let canvas = document.querySelector('.canvas');
+    canvas.appendChild(newRect.div);
+});
 document.getElementById('sqrform').addEventListener("submit", function (e) {
     e.preventDefault();
     let sqrHeight = document.getElementById('sqrsize').value;
@@ -35,21 +77,7 @@ document.getElementById('sqrform').addEventListener("submit", function (e) {
     canvas.appendChild(newSqr.div);
 });
 
-
-
-
-// to create the random placement. 
-function randVal() {
-        return Math.floor(Math.random() * (600 - 1)) + 1
-    };
-
-//playing with event listner here
-
-document.getElementById('rectangleform').addEventListener("submit", function (e) {
+document.getElementById('circont').addEventListener("submit", function (e) {
     e.preventDefault();
-    let rectHeight = document.getElementById('rectheight').value;
-    let rectWidth = document.getElementById('rectwidth').value;
-    let newRect = new Rectangle(rectHeight, rectWidth, randVal(), randVal());
-    let canvas = document.querySelector('.canvas');
-    canvas.appendChild(newRect.div);
+
 });
