@@ -9,6 +9,19 @@ let sqrHeight = document.getElementById('sqrsize').value;
 let sqrWidth = document.getElementById('sqrsize').value;
 let triBase = document.getElementById('trisize').value;
 
+let disShape = document.getElementById('shape-display');
+let disWidth = document.getElementById('width-display');
+let disHeight = document.getElementById('height-display');
+let disRadius = document.getElementById('radius-display');
+let disArea = document.getElementById('area-display');
+let disPeri = document.getElementById('peri-display');
+
+
+
+
+
+
+
 
 //defining my classes
 class Shape {
@@ -17,6 +30,7 @@ class Shape {
         this.width = width;
         this.draw();
     }
+
     draw() {
         this.div = document.createElement('div');
         let x = Math.floor(Math.random() * (canvasWidth - this.width));
@@ -28,9 +42,11 @@ class Shape {
         
         this.div.addEventListener('click', () => {
             console.log('clicked');    
+            //TODO: come back and fix this to update the spans defined above
         });
         this.div.addEventListener('dblclick', () => {
-            console.log('dblclicked');    
+            console.log('dblclicked');   
+            //TODO come back and make this delete the shape when dblclicked 
         });
 
         canvas.appendChild(this.div);
@@ -94,7 +110,6 @@ document.getElementById('rectangleform').addEventListener("submit", createRect()
 document.getElementById('sqrform').addEventListener("submit", createSqr());
 document.getElementById('cirform').addEventListener("submit", createCir());
 document.getElementById('triform').addEventListener("submit", createTri());
-
 
 //funcs for the event buttons
 function createRect(){
