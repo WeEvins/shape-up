@@ -2,16 +2,21 @@
 const canvasHeight = 600;
 const canvasWidth = 600;
 let canvas = document.querySelector('.canvas');
+let rectHeight = document.getElementById('rectheight').value;
+let rectWidth = document.getElementById('rectwidth').value;
+let cirCircum = document.getElementById('cirsize').value;
+let sqrHeight = document.getElementById('sqrsize').value;
+let sqrWidth = document.getElementById('sqrsize').value;
+let triBase = document.getElementById('trisize').value;
 
 
-
+//defining my classes
 class Shape {
     constructor(height, width) {
         this.height = height;
         this.width = width;
         this.draw();
     }
-    
     draw() {
         this.div = document.createElement('div');
         let x = Math.floor(Math.random() * (canvasWidth - this.width));
@@ -46,12 +51,14 @@ class Rectangle extends Shape {
        return 2 * this.width + 2 * this.height;
    }
 };
+
 class Square extends Rectangle {
     constructor(height, width) {
         super(height, width);
         this.div.classList.add('square', 'shape');
     }
 };
+
 class Circle extends Shape {
     constructor(radius) {
         super(2 * radius, 2 * radius)
@@ -84,27 +91,22 @@ class Triangle extends Shape {
 
 //playing with event listener here
 document.getElementById('rectangleform').addEventListener("submit", createRect());
+document.getElementById('sqrform').addEventListener("submit", createSqr());
+document.getElementById('cirform').addEventListener("submit", createCir());
+document.getElementById('triform').addEventListener("submit", createTri());
 
-document.getElementById('sqrform').addEventListener("submit", function (e) {
-    e.preventDefault();
-    let newSqr = new Square(sqrHeight, sqrWidth);
-    
-});
 
-document.getElementById('circont').addEventListener("submit", function (e) {
-    e.preventDefault();
-    let newCir = new Circle(cirCircum, x, y);
-    
-    
-    
-});
-let rectHeight = document.getElementById('rectheight').value;
-let rectWidth = document.getElementById('rectwidth').value;
-let cirCircum = document.getElementById('cirsize').value;
-let sqrHeight = document.getElementById('sqrsize').value;
-let sqrWidth = document.getElementById('sqrsize').value;
-
+//funcs for the event buttons
 function createRect(){
-    new Rectangle(rectHeight, rectWidth);
-  
+    new Rectangle(rectHeight, rectWidth); 
+}
+function createSqr(){
+    new Square(sqrHeight, sqrWidth);
+}
+function createCir() {
+    new Circle(cirCircum);
+}
+function createTri() {
+    new Triangle(triBase);
+
 }
